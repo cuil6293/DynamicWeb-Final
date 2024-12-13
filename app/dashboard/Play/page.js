@@ -46,7 +46,7 @@ export default function Play() {
       await addDoc(collection(db, "posts"), {
         fish: fish.fish,
         outcome: outcome,
-        email: authUser.email,
+        userEmail: authUser.email,
       });
     } catch (e) {
       console.error("Error adding document: ", e);

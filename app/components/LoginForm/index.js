@@ -8,7 +8,7 @@ export default function LoginUserForm() {
   const { signInWithEmailAndPassword } = useAuth();
   const router = useRouter();
 
-  const loginSubmit = useCallback(
+  const loginUserSubmit = useCallback(
     async (e) => {
       e.preventDefault();
       const email = e.currentTarget.email.value;
@@ -28,7 +28,7 @@ export default function LoginUserForm() {
   return (
     <div>
       <h2>Login User</h2>
-      <form className={styles.formContainer} onSubmit={loginSubmit}>
+      <form className={styles.formContainer} onSubmit={loginUserSubmit}>
         <label htmlFor="email">Email</label>
         <input type="email" name="email" required />
         <label htmlFor="password">Password</label>
