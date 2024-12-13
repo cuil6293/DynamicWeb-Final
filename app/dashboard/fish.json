@@ -1,0 +1,53 @@
+[
+  {
+    "fish": "Goldfish",
+    "question": "A curious goldfish approaches you. It swims around you and the stops right in front of you.",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/037/446/548/small_2x/goldfish-isolated-on-transparent-background-ornamental-fish-generative-ai-png.png",
+    "answers": [
+      {
+        "answer": true,
+        "answerText": "Pet it"
+      },
+      {
+        "answer": false,
+        "answerText": "Blink at it"
+      }
+    ],
+    "win": "The golfish stares at you as you pet it. You can kind of make out a faint blush...But fish don't blush, right?",
+    "lose": "In the goldfish's eyes you see a faint glimmer of horror and disgust. It swims away."
+  },
+  {
+    "fish": "Barramundi",
+    "question": "A humongous barramundi approaches you. You are around 60% of it's length. This fish must be some big shot with that size!",
+    "image": "https://purepng.com/public/uploads/large/purepng.com-fishfish-981524646248khl3k.png",
+    "answers": [
+      {
+        "answer": true,
+        "answerText": "Swim away"
+      },
+      {
+        "answer": false,
+        "answerText": "Approach it"
+      }
+    ],
+    "win": "The barramundi becomes incredibly interested in you. As the biggest CEO fish around, it has never seen someone ignore it.",
+    "lose": "The barramundi immediately closes in and...starts eating you! It's a fierce battle and you end up surviving after they find other prey."
+  },
+  {
+    "fish": "Angel Fish",
+    "question": "The angel fish swims excitedly around you, almost as if it recognizes you! It's asking you for food now too!",
+    "image": "https://static.vecteezy.com/system/resources/previews/046/823/116/non_2x/japanese-angelfish-on-transparent-background-png.png",
+    "answers": [
+      {
+        "answer": true,
+        "answerText": "Carnivore meal"
+      },
+      {
+        "answer": false,
+        "answerText": "Balanced meal"
+      }
+    ],
+    "win": "The angel fish immediatlely lights up and swims around you. It seems to be your childhood fish buddy!",
+    "lose": "The angel fish becomes dejected and immediately leaves. Just before it left it asked if you remembered your promise together and then cried at your confusion."
+  }
+]
