@@ -42,22 +42,22 @@ export default function Profile() {
     }
   }, [authUser, authLoading, router]);
 
-  if (authLoading || loading) {
-    return <p>Loading...</p>;
+  if (!authUser) {
+    return null;
   }
 
   return (
     <div className={styles.profileWrapper}>
       <h1>{authUser.email}</h1>
 
-      <div className={styles.postsSection}>
+      <div className={styles.postsContainer}>
         <h2>Your Posts</h2>
         {userPosts.length === 0 ? (
           <p>No posts yet.</p>
         ) : (
-          <div className={styles.postsList}>
+          <div className={styles.postsContainerList}>
             {userPosts.map((post) => (
-              <div key={post.id} className={styles.post}>
+              <div key={post.id} className={styles.profilePost}>
                 <h3>{post.fish}</h3>
                 <p>{post.outcome}</p>
               </div>

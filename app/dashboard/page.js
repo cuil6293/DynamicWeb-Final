@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { useAuth } from "@/app/context/AuthUserContext";
@@ -38,13 +39,16 @@ export default function Dashboard() {
     }
   }, [authUser, authLoading, router]);
 
-  if (authLoading || loading) {
-    return <p>Loading posts...</p>;
+  if (!authUser) {
+    return null;
   }
 
   return (
     <div className={styles.dashboardWrapper}>
-      <h1>Home</h1>
+      <Link href="/dashboard/Play">
+        <img src="https://media.tenor.com/6m3I1g_WiokAAAAM/fish-spin-sha.gif" />
+      </Link>
+      <h1>Posts</h1>
       {posts.length === 0 ? (
         <p>No posts yet.</p>
       ) : (
@@ -57,6 +61,10 @@ export default function Dashboard() {
           ))}
         </div>
       )}
+      <footer>
+        <h3>@Fish For Love - A fish dating simulator website</h3>
+        <p>Do not contact us</p>
+      </footer>
     </div>
   );
 }

@@ -1,0 +1,48 @@
+@keyframes profilePostsAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.profileWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  text-align: center;
+}
+
+.postsContainer {
+  animation: profilePostsAnimation 1s 1;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.367);
+  margin: 30px;
+  padding: 20px;
+  width: 75%;
+}
+
+.postsContainer h2 {
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.postsContainerList {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profilePost {
+  background-color: rgb(4, 115, 167);
+  border-radius: 20px;
+  padding: 10px;
+  width: 90%;
+}

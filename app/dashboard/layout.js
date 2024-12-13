@@ -25,7 +25,9 @@ export default function DashboardLayout({
     <div>
       <header className={styles.headerWrapper}>
         <div className={styles.titleWrapper}>
-          <h1>Fish for Love</h1>
+          <Link href="/dashboard">
+            <h1>Fish for Love</h1>
+          </Link>
         </div>
         <nav>
           <div className={styles.navWrapper}>

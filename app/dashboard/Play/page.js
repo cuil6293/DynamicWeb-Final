@@ -64,21 +64,19 @@ export default function Play() {
   }
 
   return (
-    <div className={styles.gameContainer}>
+    <div className={styles.gameWrapper}>
       <div className={styles.fishImage}>
         <img src={fish.image} alt={fish.fish} />
       </div>
 
       {selectedAnswer === null ? (
         <>
-          <div className={styles.question}>{fish.question}</div>
-          <div className={styles.answers}>
+          <div className={styles.gameStandardText}>
+            <h2>{fish.question}</h2>
+          </div>
+          <div className={styles.gameStandardButton}>
             {fish.answers.map((answer, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswer(answer.answer)}
-                className={styles.answerButton}
-              >
+              <button key={index} onClick={() => handleAnswer(answer.answer)}>
                 {answer.answerText}
               </button>
             ))}
@@ -86,10 +84,12 @@ export default function Play() {
         </>
       ) : (
         <>
-          <div className={styles.result}>{result}</div>
-          <button onClick={getRandomFish} className={styles.swimButton}>
-            Swim
-          </button>
+          <div className={styles.gameStandardText}>
+            <h2>{result}</h2>
+          </div>
+          <div className={styles.gameStandardButton}>
+            <button onClick={getRandomFish}>Swim</button>
+          </div>
         </>
       )}
     </div>
