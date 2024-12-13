@@ -1,5 +1,8 @@
-// /app/dashboard/DashboardLayout.js
+"use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { signOut } from "firebase/auth";
+import { auth } from "../lib/firebase";
 import styles from "./Dashboard.module.css";
 
 export default function DashboardLayout({
@@ -7,6 +10,17 @@ export default function DashboardLayout({
   logoutUserFunction,
   children,
 }) {
+  const router = useRouter();
+
+  const Logout = async () => {
+    try {
+      await signOut(auth);
+      router.push("/");
+    } catch (error) {
+      console.error("Error signing out: ", error);
+    }
+  };
+
   return (
     <div>
       <header className={styles.HeaderWrapper}>
@@ -26,13 +40,15 @@ export default function DashboardLayout({
                 <Link href="/dashboard/Profile">Profile</Link>
               </li>
               <li>
-                <Link href="/">Logout</Link>
+                <button onClick={Logout} className={styles.logoutButton}>
+                  Logout
+                </button>
               </li>
             </ul>
           </div>
         </nav>
       </header>
-      <main>{children}</main>{" "}
+      <main>{children}</main>
     </div>
   );
 }

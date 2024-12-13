@@ -4,30 +4,41 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { useAuth } from "@/app/context/AuthUserContext";
 import { db } from "../lib/firebase.js";
+import { useRouter } from "next/navigation";
 import styles from "./Dashboard.module.css";
 
 export default function Dashboard() {
+  const { authUser, loading: authLoading } = useAuth();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "posts"));
-        const postsData = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setPosts(postsData);
-      } catch (error) {
-        console.error("Error fetching posts:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    if (!authUser && !authLoading) {
+      router.push("/");
+    } else {
+      const fetchPosts = async () => {
+        try {
+          const querySnapshot = await getDocs(collection(db, "posts"));
+          const postsData = querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          setPosts(postsData);
+        } catch (error) {
+          console.error("Error fetching posts:", error);
+        } finally {
+          setLoading(false);
+        }
+      };
 
-    fetchPosts();
-  }, []);
+      fetchPosts();
+    }
+  }, [authUser, authLoading, router]);
+
+  if (authLoading) {
+    return <p>Loading...</p>;
+  }
 
   if (loading) {
     return <p>Loading posts...</p>;
