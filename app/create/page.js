@@ -10,7 +10,7 @@ export default function CreateUser() {
 
   useEffect(() => {
     if (authUser) router.push("/");
-  }, [authUser]);
+  }, [authUser, router]);
 
   return (
     <div>
