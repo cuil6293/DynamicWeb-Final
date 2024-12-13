@@ -51,7 +51,7 @@ export default function Profile() {
       <div className={styles.postsSection}>
         <h2>Your Posts</h2>
         {userPosts.length === 0 ? (
-          <p>You haven't posted anything yet.</p>
+          <p>No posts yet.</p>
         ) : (
           <div className={styles.postsList}>
             {userPosts.map((post) => (
