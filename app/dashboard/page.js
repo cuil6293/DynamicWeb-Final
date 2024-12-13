@@ -14,39 +14,37 @@ export default function Dashboard() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!authUser && !authLoading) {
-      router.push("/");
-    } else {
-      const fetchPosts = async () => {
-        try {
-          const querySnapshot = await getDocs(collection(db, "posts"));
-          const postsData = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-          }));
-          setPosts(postsData);
-        } catch (error) {
-          console.error("Error fetching posts:", error);
-        } finally {
-          setLoading(false);
-        }
-      };
+    if (!authLoading) {
+      if (!authUser) {
+        router.push("/");
+      } else {
+        const fetchPosts = async () => {
+          try {
+            const querySnapshot = await getDocs(collection(db, "posts"));
+            const postsData = querySnapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }));
+            setPosts(postsData);
+          } catch (error) {
+            console.error("Error fetching posts:", error);
+          } finally {
+            setLoading(false);
+          }
+        };
 
-      fetchPosts();
+        fetchPosts();
+      }
     }
   }, [authUser, authLoading, router]);
 
-  if (authLoading) {
-    return <p>Loading...</p>;
-  }
-
-  if (loading) {
+  if (authLoading || loading) {
     return <p>Loading posts...</p>;
   }
 
   return (
-    <div className={styles.dashboard}>
-      <h1>Dashboard</h1>
+    <div className={styles.dashboardWrapper}>
+      <h1>Home</h1>
       {posts.length === 0 ? (
         <p>No posts yet.</p>
       ) : (

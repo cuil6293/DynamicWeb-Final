@@ -8,44 +8,46 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import styles from "../Profile.module.css";
 
 export default function Profile() {
-  const { authUser } = useAuth();
+  const { authUser, loading: authLoading } = useAuth();
   const [userPosts, setUserPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
-    if (!authUser) {
-      router.push("/");
-    } else {
-      const fetchPosts = async () => {
-        try {
-          const q = query(
-            collection(db, "posts"),
-            where("userEmail", "==", authUser.email)
-          );
-          const querySnapshot = await getDocs(q);
-          const postsData = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-          }));
-          setUserPosts(postsData);
-        } catch (error) {
-          console.error("Error fetching posts: ", error);
-        } finally {
-          setLoading(false);
-        }
-      };
+    if (!authLoading) {
+      if (!authUser) {
+        router.push("/");
+      } else {
+        const fetchPosts = async () => {
+          try {
+            const q = query(
+              collection(db, "posts"),
+              where("userEmail", "==", authUser.email)
+            );
+            const querySnapshot = await getDocs(q);
+            const postsData = querySnapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }));
+            setUserPosts(postsData);
+          } catch (error) {
+            console.error("Error fetching posts: ", error);
+          } finally {
+            setLoading(false);
+          }
+        };
 
-      fetchPosts();
+        fetchPosts();
+      }
     }
-  }, [authUser, router]);
+  }, [authUser, authLoading, router]);
 
-  if (loading) {
+  if (authLoading || loading) {
     return <p>Loading...</p>;
   }
 
   return (
-    <div className={styles.profileContainer}>
+    <div className={styles.profileWrapper}>
       <h1>{authUser.email}</h1>
 
       <div className={styles.postsSection}>

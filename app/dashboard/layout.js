@@ -23,12 +23,12 @@ export default function DashboardLayout({
 
   return (
     <div>
-      <header className={styles.HeaderWrapper}>
-        <div className={styles.TitleWrapper}>
+      <header className={styles.headerWrapper}>
+        <div className={styles.titleWrapper}>
           <h1>Fish for Love</h1>
         </div>
         <nav>
-          <div className={styles.NavWrapper}>
+          <div className={styles.navWrapper}>
             <ul>
               <li>
                 <Link href="/dashboard">Home</Link>

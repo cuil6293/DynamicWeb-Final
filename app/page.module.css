@@ -1,0 +1,139 @@
+@keyframes title {
+  25% {
+    color: rgb(0, 166, 255);
+  }
+  75% {
+    color: rgb(47, 66, 188);
+  }
+}
+
+@keyframes forms {
+  from {
+    transform: translate(200%, 200%) rotate(-360deg);
+  }
+  to {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+.pageWrapper {
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1530053969600-caed2596d242?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG9jZWFuJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+  width: 100vw;
+}
+
+.pageWrapper h1 {
+  animation: title 10s infinite;
+  color: rgb(39, 199, 243);
+  font-family: var(--font-sour-gummy);
+  font-size: 100px;
+  margin-bottom: 50px;
+  padding: 10px;
+  text-shadow: -3px 0 white, 0 3px white, 3px 0 white, 0 -3px white;
+}
+
+.pageWrapper h2 {
+  color: rgb(24, 52, 194);
+  font-size: 30px;
+}
+
+.formButtonWrapper {
+  animation: forms 0.3s ease-in;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.367);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  width: 400px;
+}
+
+.buttonContainer {
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.buttonContainer button {
+  background-color: rgb(4, 80, 179);
+  border: 0px;
+  border-radius: 10px;
+  color: whitesmoke;
+  font-family: var(--font-prompt-black);
+  font-size: 20px;
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.buttonContainer button:hover {
+  background-color: rgb(171, 229, 255);
+  color: rgb(4, 80, 179);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: start;
+}
+
+.formContainer h2 {
+  text-align: center;
+}
+
+.formContainer label {
+  font-family: var(--font-sour-gummy);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.formContainer input {
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.formContainer input:focus {
+  background-color: rgb(188, 215, 251);
+  transition: 0.3s;
+}
+
+.formContainer button {
+  background-color: rgb(4, 80, 179);
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  font-family: var(--font-prompt-black);
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.formContainer button:first-child {
+  background-color: white;
+  color: rgb(4, 80, 179);
+  margin: 0;
+  padding: 0;
+  transition: 0.5s;
+}
+
+.formContainer button:hover {
+  background-color: rgb(171, 229, 255);
+  color: rgb(4, 80, 179);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.formContainer button:first-child:hover {
+  background-color: white;
+  color: rgb(45, 152, 240);
+  transform: translateX(-5px);
+}

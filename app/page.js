@@ -11,33 +11,29 @@ export default function Home() {
   const handleCloseForm = () => setActiveForm(null);
 
   return (
-    <div className={styles.page}>
+    <div className={styles.pageWrapper}>
       <h1>Fish for Love</h1>
-      <h2>There are plenty of fish in the sea</h2>
-      <h2>
-        Are you ready to capture their hearts with a new identity? Or will you
-        keep your old identity?
-      </h2>
-      <div className={styles.container}>
+      <div className={styles.formButtonWrapper}>
         {activeForm === null ? (
           <div className={styles.buttonContainer}>
-            <button onClick={() => handleButtonClick("login")}>Old Life</button>
+            <h2>Begin your fish love</h2>
+            <button onClick={() => handleButtonClick("login")}>Login</button>
             <button onClick={() => handleButtonClick("createUser")}>
-              New Life
+              Create User
             </button>
           </div>
         ) : (
           <div className={styles.formContainer}>
             {activeForm === "login" && (
               <div>
+                <button onClick={handleCloseForm}> Go Back</button>
                 <LoginForm />
-                <button onClick={handleCloseForm}>Close</button>
               </div>
             )}
             {activeForm === "createUser" && (
               <div>
+                <button onClick={handleCloseForm}>Go Back</button>
                 <CreateUserForm />
-                <button onClick={handleCloseForm}>Close</button>
               </div>
             )}
           </div>

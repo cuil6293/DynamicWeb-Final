@@ -16,10 +16,12 @@ export default function Play() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!authUser && !authLoading) {
-      router.push("/");
-    } else {
-      getRandomFish();
+    if (!authLoading) {
+      if (!authUser) {
+        router.push("/");
+      } else {
+        getRandomFish();
+      }
     }
   }, [authUser, authLoading, router]);
 
@@ -57,11 +59,9 @@ export default function Play() {
     return <p>Loading...</p>;
   }
 
-  if (!authUser) {
-    return <p>You must be logged in to play the game.</p>;
+  if (!fish) {
+    return <p>Loading...</p>;
   }
-
-  if (!fish) return <p>Loading...</p>;
 
   return (
     <div className={styles.gameContainer}>
