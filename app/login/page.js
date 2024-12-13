@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import LoginForm from "./components/Loginform";
+import LoginForm from "../components/LoginForm";
 import { useAuth } from "../context/AuthUserContext";
 
 export default function Login() {
