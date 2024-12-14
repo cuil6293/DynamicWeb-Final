@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/app/context/AuthUserContext";
 import { db } from "../../lib/firebase";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, orderBy } from "firebase/firestore";
 import styles from "../Profile.module.css";
 
 export default function Profile() {
@@ -22,12 +22,14 @@ export default function Profile() {
           try {
             const q = query(
               collection(db, "posts"),
-              where("userEmail", "==", authUser.email)
+              where("userEmail", "==", authUser.email),
+              orderBy("createdAt", "desc")
             );
             const querySnapshot = await getDocs(q);
             const postsData = querySnapshot.docs.map((doc) => ({
               id: doc.id,
               ...doc.data(),
+              createdAt: doc.data().createdAt?.toDate().toISOString(),
             }));
             setUserPosts(postsData);
           } catch (error) {

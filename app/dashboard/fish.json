@@ -49,5 +49,209 @@
     ],
     "win": "The angel fish immediatlely lights up and swims around you. It seems to be your childhood fish buddy!",
     "lose": "The angel fish becomes dejected and immediately leaves. Just before it left it asked if you remembered your promise together and then cried at your confusion."
+  },
+  {
+    "fish": "Clownfish",
+    "question": "A clownfish approaches you and asks if you've seen his son.",
+    "image": "https://png.pngtree.com/png-clipart/20230429/ourmid/pngtree-isolated-nemo-fishon-on-white-background-png-image_6747290.png",
+    "answers": [
+      {
+        "answer": false,
+        "answerText": "Yes, he's in my aquarium"
+      },
+      {
+        "answer": true,
+        "answerText": "Yes, he was taken over there"
+      }
+    ],
+    "win": "The clownfish cheers and thanks you before swimming off. As you look down you see a piece of seaweed with his number.",
+    "lose": "The clownfish frowns, tells you off and threatens to call your parents, and storms off."
+  },
+  {
+    "fish": "Catfish",
+    "question": "You're waiting for your fish date when a catfish shows up and claims they're your fish date!",
+    "image": "https://www.nicepng.com/png/full/216-2167531_photo-timothy-lack-cat-fish.png",
+    "answers": [
+      {
+        "answer": false,
+        "answerText": "You look different in your pictures..."
+      },
+      {
+        "answer": true,
+        "answerText": "You're even better than I imagined!"
+      }
+    ],
+    "win": "As the catfish blushes and smiles, you see them throw something away. It looks like a knife. The catfish drags you away to learn more about you",
+    "lose": "You see a dangerous glint in their eyes before they smile and excuse themselves. When you go back home you find you left your door open by accident. Or did you?"
+  },
+  {
+    "fish": "Olive barb",
+    "question": "An olive barb accidentally bumps into you.",
+    "image": "https://freepngimg.com/save/5208-fish-png-image/400x400",
+    "answers": [
+      {
+        "answer": false,
+        "answerText": "Ew...I wouldn't even want you in my aquarium"
+      },
+      {
+        "answer": true,
+        "answerText": "Hey buddy, what's up!"
+      }
+    ],
+    "win": "As they light up they tell you all sorts of things about their day. Before running off, they kiss your cheek while blushing",
+    "lose": "The olive barb pales and runs away before you can push him into the sand"
+  },
+  {
+    "fish": "Sheephead",
+    "question": "While in fish prison for swimming too fast you meet a sheephead.",
+    "image": "https://purepng.com/public/uploads/large/purepng.com-fishfoodfishanimalseamarineoceanseafoodaquatic-981524648618xcscw.png",
+    "answers": [
+      {
+        "answer": false,
+        "answerText": "Fight them"
+      },
+      {
+        "answer": true,
+        "answerText": "Stay away from them for now"
+      }
+    ],
+    "win": "The sheephead appreciates your calm nature, despite you not actually being calm and just scared",
+    "lose": "A growl escapes their mouth before lunging at you with their teeth! You can now officially say you've been bitten by a fish!"
+  },
+  {
+    "fish": "Dolphin",
+    "question": "A dolphin excitedly makes it's way towards you and passes you a pufferfish",
+    "image": "https://purepng.com/public/uploads/large/purepng.com-atlantic-bottlenose-dolphin-jumpingdolphindelphinussilver-dolphinatlantic-dolphin-441520281144j2zax.png",
+    "answers": [
+      {
+        "answer": false,
+        "answerText": "Pass it back"
+      },
+      {
+        "answer": true,
+        "answerText": "Puff it"
+      }
+    ],
+    "win": "They smirk at you, happy you got the memo. You guys spend some time puffing on some pufferfish",
+    "lose": "The dolphin is disappointed at how uptight you are. It swims away calling you a killjoy"
+  },
+  {
+    "fish": "Magikarp",
+    "question": "A Magikarp swims towards you and splashes! It has no effect...",
+    "image": "https://static.wikia.nocookie.net/pokemon-snakewood/images/0/01/Magikarp.png",
+    "answers": [
+      {
+        "answer": true,
+        "answerText": "Splash back"
+      },
+      {
+        "answer": false,
+        "answerText": "Run away and try for another one"
+      }
+    ],
+    "win": "The Magikarp splashes even more. They subtly tell you that they will evolve into a Gyarados like all their family and be rich enough to support you",
+    "lose": "They stare at you as you run away. They stop splashing and go on a journey to become the very best that no one ever was"
+  },
+  {
+    "fish": "Tilapia",
+    "question": "A tilapia slowly swims by. It then stops and looks at you before offering you a strawberry candy fish pellet",
+    "image": "https://png.pngtree.com/png-vector/20230919/ourmid/pngtree-fresh-nile-tilapia-or-pla-nin-in-thai-freshwater-fish-isolated-png-image_10086755.png",
+    "answers": [
+      {
+        "answer": true,
+        "answerText": "Accept the candy and help them cross the algae"
+      },
+      {
+        "answer": false,
+        "answerText": "Run away, stranger danger"
+      }
+    ],
+    "win": "They smile as you escort them and when you're done the squeeze your cheeks and swim away",
+    "lose": "The tilapia is sad, but understands that it's good to know about stranger danger. They swim away sadly and slowly"
+  },
+  {
+    "fish": "Shark",
+    "question": "A menacing shark approaches you. They smirk as they start hitting on you",
+    "image": "https://purepng.com/public/uploads/thumbnail//purepng.com-shark-swimmingsharksharksswimmingangry-481521107352mwsly.png",
+    "answers": [
+      {
+        "answer": true,
+        "answerText": "Flirt back"
+      },
+      {
+        "answer": false,
+        "answerText": "Scream in terror and swim away"
+      }
+    ],
+    "win": "The shark begins to blush and trip on their words. They swim away out of embarrassment",
+    "lose": "They frown and roll their eyes. Yet another person who judges based on looks and outdated movies"
+  },
+  {
+    "fish": "Octopus",
+    "question": "You see an octopus crunching some numbers while in a small jar",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/024/722/208/small_2x/octopus-with-ai-generated-free-png.png",
+    "answers": [
+      {
+        "answer": false,
+        "answerText": "Attempt to break them out"
+      },
+      {
+        "answer": true,
+        "answerText": "Lend a limb"
+      }
+    ],
+    "win": "The octopus thanks you and you stay there helping them until they solve the problem. They get out of the jar and ask if you want to work with them some time soon",
+    "lose": "As you break the container the octopus stares at you before storming off. You could have sworn they also called you stupid"
+  },
+  {
+    "fish": "Jellyfish",
+    "question": "A jellyfish slowly floats by asking you to help them move a certain direction",
+    "image": "https://www.freepnglogos.com/uploads/jellyfish-png/sea-jellyfish-transparent-background-zoo-3.png",
+    "answers": [
+      {
+        "answer": true,
+        "answerText": "Agree and cause a few waves to push them"
+      },
+      {
+        "answer": false,
+        "answerText": "Agree and use your hands"
+      }
+    ],
+    "win": "The jellyfish appreciates you didn't touch them since it could have seriosuly hurt you",
+    "lose": "You immediately get stung and are rushed to the hospital where your doctor calls you crazy for trying to romance fish"
+  },
+  {
+    "fish": "Shrimp",
+    "question": "A shrimp goes by and asks if you know your away around the fish city",
+    "image": "https://wallpapers.com/images/hd/raw-shrimp-transparent-background-bbnqptbweqny982r.jpg",
+    "answers": [
+      {
+        "answer": false,
+        "answerText": "Ignore this country bumpkin"
+      },
+      {
+        "answer": true,
+        "answerText": "Give them directions"
+      }
+    ],
+    "win": "The shrimp smiles at you before giving you some home grown algae from where they come from",
+    "lose": "You see them deflate before going somewhere randomly"
+  },
+  {
+    "fish": "Starfish",
+    "question": "You come across starfish who is stuck under some rubble and can't move. They ask for help and urgently because they need to catch their current",
+    "image": "https://static.vecteezy.com/system/resources/previews/030/728/635/non_2x/an-orange-starfish-on-a-transparent-background-ai-generative-free-png.png",
+    "answers": [
+      {
+        "answer": true,
+        "answerText": "Cut off the limb that's stuck"
+      },
+      {
+        "answer": false,
+        "answerText": "Pull the starfish out"
+      }
+    ],
+    "win": "The starfish thanks you and exchanges contact information with you. They tell you not to worry because their limbs will regrow",
+    "lose": "You take your time getting them out and they thank you, but they look upset. They missed their current"
   }
 ]

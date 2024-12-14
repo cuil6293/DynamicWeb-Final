@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import fishData from "../fish.json";
 import { useAuth } from "@/app/context/AuthUserContext";
 import { db } from "../../lib/firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import styles from "../Play.module.css";
 
 export default function Play() {
@@ -34,7 +34,7 @@ export default function Play() {
 
   const handleAnswer = (answer) => {
     setSelectedAnswer(answer);
-    if (answer === fish.answers[0].answer) {
+    if (answer.answer === true) {
       setResult(fish.win);
       addToFirebase(fish.win);
     } else {
@@ -49,6 +49,7 @@ export default function Play() {
         fish: fish.fish,
         outcome: outcome,
         userEmail: authUser.email,
+        createdAt: serverTimestamp(),
       });
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -76,7 +77,7 @@ export default function Play() {
           </div>
           <div className={styles.gameStandardButton}>
             {fish.answers.map((answer, index) => (
-              <button key={index} onClick={() => handleAnswer(answer.answer)}>
+              <button key={index} onClick={() => handleAnswer(answer)}>
                 {answer.answerText}
               </button>
             ))}

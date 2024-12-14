@@ -26,6 +26,7 @@ export default function Dashboard() {
               id: doc.id,
               ...doc.data(),
             }));
+            postsData.sort((a, b) => b.createdAt - a.createdAt);
             setPosts(postsData);
           } catch (error) {
             console.error("Error fetching posts:", error);
@@ -46,7 +47,10 @@ export default function Dashboard() {
   return (
     <div className={styles.dashboardWrapper}>
       <Link href="/dashboard/Play">
-        <img src="https://media.tenor.com/6m3I1g_WiokAAAAM/fish-spin-sha.gif" />
+        <img
+          src="https://media.tenor.com/6m3I1g_WiokAAAAM/fish-spin-sha.gif"
+          alt="Fish Spin"
+        />
       </Link>
       <h1>Posts</h1>
       {posts.length === 0 ? (
